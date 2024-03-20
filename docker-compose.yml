@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+    redis:
+        image: redis:latest
+        restart: always
+        ports:
+            - '6379:6379'
+        networks:
+            - redis-network
+
+    database:
+        image: postgres:latest
+        restart: always
+        ports:
+            - '5432:5432'
+        env_file: ./docker/.env.database
+        volumes:
+            - ./docker/postgres-data:/var/lib/postgresql/data
+        networks:
+            - database-network
+
+    node-app:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: node-app
+        ports:
+            - '3000:3000'
+        depends_on:
+            - database
+            - redis
+        links:
+            - database
+            - redis
+        env_file: ./.env.node-app
+        networks:
+            - database-network
+            - redis-network
+
+networks:
+    database-network:
+        driver: bridge
+    redis-network:
+        driver: bridge
