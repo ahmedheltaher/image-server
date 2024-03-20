@@ -1,8 +1,8 @@
-# Getting Started Guide: Library Management System API
+# Getting Started Guide: Images Server API
 
 ## Introduction
 
-This guide provides instructions on how to set up and run the Library Management System API project. The project utilizes Docker Compose for managing dependencies and can be run either with Docker or directly on the host machine.
+This guide provides instructions on how to set up and run the Images Server API project. The project utilizes Docker Compose for managing dependencies and can be run either with Docker or directly on the host machine.
 
 ## Prerequisites
 
@@ -69,7 +69,7 @@ Ensure you have the following installed on your system:
 
 For more detailed information about the project architecture, database schema, and folder structure, refer to the following documents:
 
--   [Architecture Overview](./docs/architecture.md): Provides insights into the architecture of the Library Management System API, including its layers and components.
+-   [Architecture Overview](./docs/architecture.md): Provides insights into the architecture of the Images Server API, including its layers and components.
 -   [Database Schema](./docs/db.md): Describes the database schema used in the project, detailing the tables and their relationships.
 -   [Folder Structure](./docs/structure.md): Explains the folder structure of the project, highlighting the organization of files and directories.
 
